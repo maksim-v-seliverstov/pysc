@@ -11,7 +11,7 @@ Example script to run as a service
 
    from xmlrpc.server import SimpleXMLRPCServer
 
-   from pyscm import event_stop
+   from pysc import event_stop
 
 
    class TestServer:
@@ -40,7 +40,7 @@ Create and start service
    import sys
    from xmlrpc.client import ServerProxy
 
-   import pyscm
+   import pysc
 
 
    if __name__ == '__main__':
@@ -48,11 +48,11 @@ Create and start service
        script_path = os.path.join(
            os.path.dirname(__file__), 'xmlrpc_server.py'
        )
-       pyscm.create(
+       pysc.create(
            service_name=service_name,
            cmd=[sys.executable, script_path]
        )
-       pyscm.start(service_name)
+       pysc.start(service_name)
 
        client = ServerProxy('http://127.0.0.1:9001')
        print(client.echo('test scm'))
@@ -65,10 +65,10 @@ Stop and delete service
 
    import os
 
-   import pyscm
+   import pysc
 
 
    if __name__ == '__main__':
        service_name = 'test_xmlrpc_server'
-       pyscm.stop(service_name)
-       pyscm.delete(service_name)
+       pysc.stop(service_name)
+       pysc.delete(service_name)

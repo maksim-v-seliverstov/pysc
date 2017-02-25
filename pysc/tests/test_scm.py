@@ -8,7 +8,7 @@ from xmlrpc.client import ServerProxy
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))
 
-import pyscm
+import pysc
 
 SERVER_PORT = 15742
 
@@ -30,17 +30,17 @@ class SCMTest(unittest.TestCase):
             with self.assertRaises(ConnectionRefusedError):
                 client.msg(msg)
 
-            pyscm.create(
+            pysc.create(
                 service_name=service_name,
                 cmd=[sys.executable, script_path] + args
             )
             try:
-                pyscm.start(service_name)
+                pysc.start(service_name)
                 self.assertEqual(client.echo(msg), msg)
                 self.assertEqual(client.get_args(), [str(arg) for arg in args])
-                pyscm.stop(service_name)
+                pysc.stop(service_name)
             finally:
-                pyscm.delete(service_name)
+                pysc.delete(service_name)
 
             with self.assertRaises(ConnectionRefusedError):
                     client.msg(msg)
@@ -51,7 +51,7 @@ class SCMTest(unittest.TestCase):
 
 from xmlrpc.server import SimpleXMLRPCServer
 
-from pyscm import event_stop
+from pysc import event_stop
 
 
 class TestServer:

@@ -1,7 +1,7 @@
 Service API
 ===========
 
-.. py:function:: pyscm.create(service_name, cmd, [username=None[, password=None]])
+.. py:function:: pysc.create(service_name, cmd, [username=None[, password=None]])
 
    Create service.
 
@@ -16,31 +16,31 @@ Service API
       :platform: Windows
    :raises WinError: if the GetLastError return non zero value.
 
-.. py:function:: pyscm.delete(service_name)
+.. py:function:: pysc.delete(service_name)
 
    Delete service.
 
    :param str service_name: The name of the service.
 
-.. py:function:: pyscm.start(service_name)
+.. py:function:: pysc.start(service_name)
 
    Start service.
 
    :param str service_name: The name of the service.
 
-.. py:function:: pyscm.stop(service_name)
+.. py:function:: pysc.stop(service_name)
 
    Stop service.
 
    :param str service_name: The name of the service.
 
-.. py:function:: pyscm.event_stop(close_func)
+.. py:function:: pysc.event_stop(close_func)
 
    Specify a function for stop the process of a service.
 
    :param close_func: A function is necessary to stop the process.
 
-.. py:function:: pyscm.set_user(username[, password=None[, service_name=None]])
+.. py:function:: pysc.set_user(username[, password=None[, service_name=None]])
 
    Specify name and password of the account to run service.
 

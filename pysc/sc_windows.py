@@ -3,7 +3,7 @@ import threading
 from subprocess import list2cmdline
 from contextlib import contextmanager
 
-from pyscm import win_scm_api
+from pysc import win_scm_api
 
 
 __all__ = [

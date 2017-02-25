@@ -12,8 +12,8 @@ if platform.system() == 'Windows':
     c = MSVCCompiler()
 
     obj = c.compile(
-        sources=['pyscm/win_service/svc/svc.cc'],
-        include_dirs=['pyscm/include'],
+        sources=['pysc/win_service/svc/svc.cc'],
+        include_dirs=['pysc/include'],
         macros=[
             ('SECURITY_WIN32', None),
             ('BOOST_BIND_ENABLE_STDCALL', None),
@@ -23,14 +23,14 @@ if platform.system() == 'Windows':
     )
 
     try:
-        c.link_executable(obj, 'pyscm/svc', libraries=['Secur32', 'Shlwapi', 'Advapi32'])
+        c.link_executable(obj, 'pysc/svc', libraries=['Secur32', 'Shlwapi', 'Advapi32'])
     except LinkError as err:
         pass
 
 
 setup(
-    name='pyscm',
-    version=__import__('pyscm').__version__,
+    name='pysc',
+    version=__import__('pysc').__version__,
     description='Service Control Manager for Windows and Linux',
     author='Seliverstov Maksim',
     author_email='Maksim.V.Seliverstov@yandex.ru',
@@ -42,9 +42,9 @@ setup(
         'runit',
         #'c/c++ service windows'
     ],
-    package_dir={'pyscm': 'pyscm'},
+    package_dir={'pysc': 'pysc'},
     package_data={
-        'pyscm': ['svc.exe'],
-        'pyscm.include': ['skeleton/*.h']
+        'pysc': ['svc.exe'],
+        'pysc.include': ['skeleton/*.h']
     }
 )

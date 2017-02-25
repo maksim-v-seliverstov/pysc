@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# pyscm documentation build configuration file, created by
+# pysc documentation build configuration file, created by
 # sphinx-quickstart on Sat Feb 25 18:37:01 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'pyscm'
+project = 'pysc'
 copyright = '2017, Seliverstov Maksim'
 author = 'Seliverstov Maksim'
 
@@ -127,7 +127,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'pyscm.tex', 'pyscm Documentation',
+    (master_doc, 'pysc.tex', 'pysc Documentation',
      'Seliverstov Maksim', 'manual'),
 ]
 
@@ -137,7 +137,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'pyscm', 'pyscm Documentation',
+    (master_doc, 'pysc', 'pysc Documentation',
      [author], 1)
 ]
 
@@ -148,8 +148,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'pyscm', 'pyscm Documentation',
-     author, 'pyscm', 'One line description of project.',
+    (master_doc, 'pysc', 'pysc Documentation',
+     author, 'pysc', 'One line description of project.',
      'Miscellaneous'),
 ]
 

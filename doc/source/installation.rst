@@ -3,7 +3,7 @@ Installation
 
 ::
 
-   $ pip install pyscm
+   $ pip install pysc
 
 
 Dependencies for Linux::
