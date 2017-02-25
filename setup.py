@@ -12,8 +12,8 @@ if platform.system() == 'Windows':
     c = MSVCCompiler()
 
     obj = c.compile(
-        sources=['win_service/svc/svc.cc'],
-        include_dirs=['include'],
+        sources=['pyscm/win_service/svc/svc.cc'],
+        include_dirs=['pyscm/include'],
         macros=[
             ('SECURITY_WIN32', None),
             ('BOOST_BIND_ENABLE_STDCALL', None),
@@ -40,11 +40,11 @@ setup(
         'windows service', 'linux demon',
         'service', 'demon',
         'runit',
-        'c/c++ service windows'
+        #'c/c++ service windows'
     ],
     package_dir={'pyscm': 'pyscm'},
     package_data={
         'pyscm': ['svc.exe'],
-        'pyscm.include': ['../include/skeleton/*.h']
+        'pyscm.include': ['skeleton/*.h']
     }
 )

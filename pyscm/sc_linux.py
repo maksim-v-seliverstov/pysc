@@ -42,7 +42,7 @@ def stop(service_name):
     call(['/usr/bin/sv', 'stop', service_name])
 
 
-def event_stop(f):
+def event_stop(close_func):
     def signal_handler(signal, frame):
-        f()
+        close_func()
     signal.signal(signal.SIGTERM, signal_handler)

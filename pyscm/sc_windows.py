@@ -49,8 +49,8 @@ def stop(service_name):
     win_scm_api.stop(service_name)
 
 
-def event_stop(f):
-    t = threading.Thread(target=win_scm_api.wait, args=(f,))
+def event_stop(close_func):
+    t = threading.Thread(target=win_scm_api.wait, args=(close_func,))
     t.daemon = True
     t.start()
 
