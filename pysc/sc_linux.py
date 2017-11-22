@@ -29,9 +29,9 @@ def create(service_name, cmd, username=None, password=None):
 def delete(service_name):
     sv_dir = '/etc/sv/{}'.format(service_name)
     service_dir = '/etc/service/{}'.format(service_name)
-    for path in [sv_dir, service_dir]:
-        if os.path.exists(path):
-            call(['rm', '-r', path])
+    if os.path.exists(sv_dir):
+        call(['rm', '-r', service_dir])
+        call(['rm', '-r', sv_dir])
 
 
 def start(service_name):
